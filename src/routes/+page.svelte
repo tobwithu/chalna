@@ -480,7 +480,7 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    opacity: 0.5;
+    opacity: 0;
     transition: opacity 0.25s ease-in-out;
   }
   .title-bar:hover {
