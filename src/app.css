@@ -1,0 +1,50 @@
+body {
+  font-family: sans-serif;
+}
+
+/* Shared Title Bar Styles */
+.title-bar {
+  background-color: rgba(40, 40, 40, 0.85);
+  color: white;
+  font-size: 11pt;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.title-bar .title {
+  flex: 1;
+  padding: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.title-bar > :last-child {
+  margin-right: 8px;
+}
+
+.control-btn {
+  width: 22px;
+  height: 22px;
+  border: none;
+  padding: 2px;
+  inset: 0px;
+  background-color: transparent;
+  cursor: pointer;
+
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+.control-btn:hover {
+  opacity: 1;
+}
+.control-btn:active {
+  opacity: 0.5;
+}
+.control-btn > img {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,12 @@
+# Tauri
+/src-tauri/target/
+
+# SvelteKit
+/build/
+/.svelte-kit/
+
+# Node
+/node_modules/
+
+# General
+/dist/

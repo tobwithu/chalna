@@ -1,0 +1,29 @@
+<svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <title>open</title>
+
+ <g transform="translate(12, 12) scale(0.833333) translate(-12, -12)">
+  <title>Layer 1</title>
+  <g stroke="#ffffff" id="Page-1" fill="none" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+   <!-- 왼쪽 아래 사각형 (닫힌 사각형이 아닌 4개의 선) -->
+   <g id="left-rectangle">
+    <!-- 왼쪽 세로선 -->
+    <line x1="4.125" y1="6.125" x2="4.125" y2="19.875" id="svg_1"/>
+    <!-- 아래쪽 가로선 -->
+    <line x1="4.125" y1="19.875" x2="17.875" y2="19.875" id="svg_2"/>
+    <!-- 오른쪽 세로선 -->
+    <line x1="17.875" y1="19.875" x2="17.875" y2="14.4375" id="svg_3"/>
+    <!-- 위쪽 가로선 -->
+    <line x1="4.125" y1="6.125" x2="9.796875" y2="6.125" id="svg_4"/>
+   </g>
+   <!-- 오른쪽 위 화살표 (3개의 선) -->
+   <g id="right-arrow">
+    <!-- 화살표 몸통 (대각선) -->
+    <line x1="10.171875" y1="13.828125" x2="20.953125" y2="3.046875" id="svg_5"/>
+    <!-- 화살표 위쪽 선 -->
+    <line x1="13.171875" y1="3.046875" x2="20.953125" y2="3.046875" id="svg_6"/>
+    <!-- 화살표 아래쪽 선 -->
+    <line x1="20.953125" y1="10.875" x2="20.953125" y2="3.046875" id="svg_7"/>
+   </g>
+  </g>
+ </g>
+</svg>
