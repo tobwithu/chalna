@@ -1,7 +1,12 @@
 <script lang="ts">
   import { open } from '@tauri-apps/plugin-dialog'
+  import { t } from 'svelte-i18n'
   import type { Config } from './config'
-  let { close, config, saveConfig } = $props<{
+  let {
+    close,
+    config = $bindable(),
+    saveConfig,
+  } = $props<{
     close: (saved: boolean) => void
     config: Config
     saveConfig: (config: Config) => Promise<void>
@@ -45,32 +50,41 @@
     role="presentation"
   >
     <div class="title-bar">
-      <div class="title">설정</div>
-      <button class="close-btn control-btn" aria-label="닫기" onclick={handleClose}>
-        <img src="/images/close.svg" alt="닫기" />
+      <div class="title">{$t('settings.title')}</div>
+      <button class="close-btn control-btn" aria-label={$t('settings.close')} onclick={handleClose}>
+        <img src="/images/close.svg" alt={$t('settings.close')} />
       </button>
     </div>
     <div class="content">
       <div class="field">
-        <span>이미지 폴더</span>
+        <span>{$t('settings.image_folder')}</span>
         <input
           type="text"
           id="imageFolder"
           bind:value={config.imageFolder}
           readonly
         />
-        <button class="control-btn" onclick={selectFolder}>
-          <img src="/images/folder.svg" alt="찾아보기" />
+        <button 
+          id="browse"
+          class="control-btn"
+          title={$t('settings.browse')}
+          aria-label={$t('settings.browse')} 
+          onclick={selectFolder}>
+          <img src="/images/folder.svg" alt={$t('settings.browse')} />
         </button>
       </div>
       <div class="field">
-        <span>표시 시간</span>
+        <span>{$t('settings.display_time')}</span>
         <input type="number" id="secondsToShow" bind:value={config.secondsToShow} />
-        <span>초</span>
-    </div>
+        <span>{$t('settings.seconds')}</span>
+      </div>
       <div class="field">
-        <span>하위 폴더 포함</span>
-        <input type="checkbox" id="includeSubDirectories" bind:checked={config.includeSubDirectories} />
+        <span>{$t('settings.include_subfolders')}</span>
+        <input
+          type="checkbox"
+          id="includeSubDirectories"
+          bind:checked={config.includeSubDirectories}
+        />
       </div>
     </div>
   </div>

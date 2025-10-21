@@ -1,0 +1,18 @@
+{
+  "controls": {
+    "previous": "이전",
+    "play": "재생",
+    "pause": "일시 중지",
+    "next": "다음",
+    "open": "보기"
+  },
+  "settings": {
+    "title": "설정",
+    "image_folder": "이미지 폴더",
+    "browse": "찾아보기",
+    "display_time": "표시 시간",
+    "seconds": "초",
+    "include_subfolders": "하위 폴더 포함",
+    "close": "닫기"
+  }
+}

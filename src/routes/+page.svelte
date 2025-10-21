@@ -1,6 +1,7 @@
 <svelte:options runes={true} />
 
 <script lang="ts">
+  import { t } from 'svelte-i18n'
   import { openPath } from '@tauri-apps/plugin-opener'
   import { getCurrentWindow } from '@tauri-apps/api/window'
   import { convertFileSrc } from '@tauri-apps/api/core'
@@ -302,12 +303,12 @@
   }
 
   // This code runs once when the component is first created.
-  init()
-
-  // Svelte 5 uses the return function of an $effect for component cleanup,
-  // similar to onDestroy in previous versions. This effect has no dependencies,
-  // so it runs once to set up the cleanup, which then runs when the component is unmounted.
   $effect(() => {
+    init()
+
+    // Svelte 5 uses the return function of an $effect for component cleanup,
+    // similar to onDestroy in previous versions. This effect has no dependencies,
+    // so it runs once to set up the cleanup, which then runs when the component is unmounted.
     return () => {
       if (timer) clearTimeout(timer)
       if (progTimer) clearInterval(progTimer)
@@ -325,7 +326,7 @@
 
 {#if showSettings}
   <SettingsDialog
-    {config}
+    bind:config={config}
     {saveConfig}
     close={(saved) => {
       showSettings = false
@@ -361,15 +362,16 @@
   </div>
 
   <div class="overlay">
-    <div class="title-bar" title={imagePathAndName}>
-      <div class="title" data-tauri-drag-region>{fileName}</div>
+    <div class="title-bar">
+      <div class="title" data-tauri-drag-region title={imagePathAndName}>{fileName}</div>
       <button
         id="settings"
         class="control-btn"
-        aria-label="설정"
+        title={$t('settings.title')}
+        aria-label={$t('settings.title')}
         onclick={() => (showSettings = true)}
       >
-        <img src="images/setting.svg" alt="설정" />
+        <img src="images/setting.svg" alt={$t('settings.title')} />
       </button>
     </div>
     <div ondblclick={handleDoubleClick} role="group"></div>
@@ -378,47 +380,47 @@
         <button
           class="control-btn"
           id="prev"
-          title="이전"
-          aria-label="이전"
+          title={$t('controls.previous')}
+          aria-label={$t('controls.previous')}
           onclick={() => onAction('prev')}
           onkeydown={(e) => e.key === 'Enter' && onAction('prev')}
         >
-          <img src="/images/prev.svg" alt="이전" />
+          <img src="/images/prev.svg" alt={$t('controls.previous')} />
         </button>
         <button
           class="control-btn"
           id={isPlaying ? 'pause' : 'play'}
-          title={isPlaying ? '일시 중지' : '재생'}
-          aria-label={isPlaying ? '일시 중지' : '재생'}
+          title={isPlaying ? $t('controls.pause') : $t('controls.play')}
+          aria-label={isPlaying ? $t('controls.pause') : $t('controls.play')}
           onclick={() => onAction(isPlaying ? 'pause' : 'play')}
           onkeydown={(e) =>
             e.key === 'Enter' && onAction(isPlaying ? 'pause' : 'play')}
         >
           <img
             src={isPlaying ? '/images/pause.svg' : '/images/play.svg'}
-            alt={isPlaying ? '일시 중지' : '재생'}
+            alt={isPlaying ? $t('controls.pause') : $t('controls.play')}
           />
         </button>
         <button
           class="control-btn"
           id="next"
-          title="다음"
-          aria-label="다음"
+          title={$t('controls.next')}
+          aria-label={$t('controls.next')}
           onclick={() => onAction('next')}
           onkeydown={(e) => e.key === 'Enter' && onAction('next')}
         >
-          <img src="/images/next.svg" alt="다음" />
+          <img src="/images/next.svg" alt={$t('controls.next')} />
         </button>
         <div id="separator"></div>
         <button
           class="control-btn"
           id="open"
-          title="보기"
-          aria-label="보기"
+          title={$t('controls.open')}
+          aria-label={$t('controls.open')}
           onclick={() => onAction('open')}
           onkeydown={(e) => e.key === 'Enter' && onAction('open')}
         >
-          <img src="/images/open.svg" alt="보기" />
+          <img src="/images/open.svg" alt={$t('controls.open')} />
         </button>
       </div>
       <div class="timeBar">

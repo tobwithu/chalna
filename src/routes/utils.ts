@@ -26,6 +26,7 @@ export function getTimeString(d: Date): string {
 export function randomSort(): number {
   return Math.random() - 0.5
 }
+
 export async function setWindowPosition(
   window: Window,
   x: 'left' | 'right',

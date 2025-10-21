@@ -1,0 +1,18 @@
+{
+  "controls": {
+    "previous": "Previous",
+    "play": "Play",
+    "pause": "Pause",
+    "next": "Next",
+    "open": "Open"
+  },
+  "settings": {
+    "title": "Settings",
+    "image_folder": "Image Folder",
+    "browse": "Browse",
+    "display_time": "Display Time",
+    "seconds": "seconds",
+    "include_subfolders": "Include Subfolders",
+    "close": "Close"
+  }
+}
