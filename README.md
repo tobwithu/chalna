@@ -2,6 +2,8 @@
 
 **Chalna** (찰나, *chal-na*, a Korean word for "a moment" or "an instant") is a sleek and minimalist desktop application that turns your favorite photos into a beautiful, continuous slideshow. It's perfect for your second monitor, a digital photo frame, or simply for enjoying a stream of memories right on your desktop.
 
+<img width="446" height="346" alt="Chalna" src="https://github.com/user-attachments/assets/6bdbdde0-e412-42e2-b14f-16760a50a1b2" />
+
 ## ✨ Features
 
 - **Seamless Slideshow**: Enjoy your photos with smooth cross-fade transitions.
