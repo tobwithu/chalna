@@ -512,7 +512,7 @@
     left: 0px;
     width: 100%;
     text-align: center;
-    opacity: 0.75;
+    opacity: 0;
     transition: opacity 0.25s ease-in-out;
   }
 
