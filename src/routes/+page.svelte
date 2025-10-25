@@ -21,8 +21,6 @@
   let progTimer: any = null
   let startTime = 0
   let fileName = $state('')
-  let image1 = $state('')
-  let image2 = $state('')
   let time1 = $state('')
   let time2 = $state('')
   let progress = $state(0)
@@ -32,6 +30,8 @@
   let image2Opacity = $state(0)
   let showSettings = $state(false)
   let unlisten: UnlistenFn | null = null
+  let image1Element: HTMLImageElement
+  let image2Element: HTMLImageElement
 
   // Utility functions
   function log(s: string | null): void {
@@ -56,9 +56,9 @@
       const dataUrl = convertFileSrc(src)
 
       await new Promise<void>((resolve, reject) => {
-        const img = new Image()
+        const img = curImg === 0 ? image1Element : image2Element
         img.onload = () => resolve()
-        img.onerror = reject
+        img.onerror = () => reject(new Error('Image loading failed'))
         img.src = dataUrl
       })
 
@@ -67,12 +67,10 @@
       const timeString = getTimeString(new Date(modTime))
 
       if (curImg === 0) {
-        image1 = dataUrl
         time1 = timeString
         image1Opacity = 1
         image2Opacity = 0
       } else {
-        image2 = dataUrl
         time2 = timeString
         image2Opacity = 1
         image1Opacity = 0
@@ -346,14 +344,14 @@
 
   <div class="image-container">
     <img
-      src={image1}
+      bind:this={image1Element}
       alt="1"
       class="slide-image image1"
       style="opacity: {image1Opacity}"
       draggable="false"
     />
     <img
-      src={image2}
+      bind:this={image2Element}
       alt="2"
       class="slide-image image2"
       style="opacity: {image2Opacity}"
