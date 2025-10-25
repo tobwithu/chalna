@@ -13,6 +13,7 @@
     "display_time": "표시 시간",
     "seconds": "초",
     "include_subfolders": "하위 폴더 포함",
+    "time_filter": "시간 필터",
     "close": "닫기"
   }
 }

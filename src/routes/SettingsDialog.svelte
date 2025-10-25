@@ -86,6 +86,14 @@
           bind:checked={config.includeSubDirectories}
         />
       </div>
+      <div class="field">
+        <span>{$t('settings.time_filter')}</span>
+        <input
+          type="checkbox"
+          id="timeFilter"
+          bind:checked={config.timeFilter}
+        />
+      </div>
     </div>
   </div>
 </div>

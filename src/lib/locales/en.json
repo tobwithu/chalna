@@ -13,6 +13,7 @@
     "display_time": "Display Time",
     "seconds": "seconds",
     "include_subfolders": "Include Subfolders",
+    "time_filter": "Time Filter",
     "close": "Close"
   }
 }
